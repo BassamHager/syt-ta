@@ -1,15 +1,21 @@
 .yacht-pictures-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 10px 20px;
-  grid-template-areas:
-    "primary primary . ."
-    "primary primary . .";
+  display: flex;
+  flex-wrap: wrap;
+  // width: 100%;
+  // display: grid;
+  // grid-template-columns: 1fr 1fr 1fr 1fr;
+  // grid-template-rows: 1fr 1fr;
+  // gap: 10px 20px;
+  // grid-template-areas:
+  //   "primary primary . ."
+  //   "primary primary . .";
 }
 
 .primary {
-  grid-area: primary;
+  // width: 100%;
+  // height: 100%;
+  // aspect-ratio: 1/2;
+  // grid-area: primary;
 }
 
 .yacht-picture {

@@ -72,8 +72,10 @@ export const useFetchAndSortYachtGalleryData = () => {
 
   // combine the needed gallery data in one array
   useEffect(() => {
-    isTimeToCombine &&
-      setYachtGridPhotos([primaryPhoto, ...interiorPhotos, ...exteriorPhotos]);
+    const orderedPhotos = [];
+    orderedPhotos.push(primaryPhoto, ...interiorPhotos, ...exteriorPhotos);
+
+    isTimeToCombine && setYachtGridPhotos(orderedPhotos);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isTimeToCombine, primaryPhoto, interiorPhotos, exteriorPhotos]);
 
