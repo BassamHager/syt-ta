@@ -1,7 +1,8 @@
-import { useContext, useCallback, useEffect } from "react";
+import { useState, useContext, useCallback, useEffect } from "react";
 import { YachtGalleryContext } from "../../context/YachtContext";
 // mocked
 import MOCKED_YACHT_DATA from "../../mock/mockedYachtData.json";
+import { TARGETED_CATEGORIES } from "../../mock/constants";
 
 export const useFetchAndSortYachtGalleryData = () => {
   // context
@@ -14,7 +15,11 @@ export const useFetchAndSortYachtGalleryData = () => {
     setExteriorPhotos,
     yachtGridPhotos,
     setYachtGridPhotos,
+    mappedInterior,
+    mappedExterior,
   } = useContext(YachtGalleryContext);
+  // inner state
+  const [isTimeToCombine, setIsTimeToCombine] = useState(false);
 
   // methods
   const findAndSetPrimaryPhoto = useCallback(() => {
@@ -23,86 +28,56 @@ export const useFetchAndSortYachtGalleryData = () => {
     );
 
     setPrimaryPhoto(foundPrimaryPhoto);
-  }, []);
+  }, [setPrimaryPhoto]);
 
-  const categoriesTargeted = {
-    interior: [
-      "saloon",
-      "jacuzzi_and_pool",
-      "dining",
-      "stateroom",
-      "fitness_&_wellnes",
-    ],
-    exterior: ["anchored", "profile", "at_shipyard", "exterior_detail"],
-  };
+  // helper - prevent duplications
+  const addUniqueArrayItem = (array, item) =>
+    !array.includes(item) && array.push(item);
 
-  const findAndSetPhotosPerTargetedCategories = useCallback(
-    (categoriesType) => {
-      // dynamic select between interior/exterior
-      const selectedCategories =
-        categoriesType === "interior"
-          ? categoriesTargeted.interior
-          : categoriesTargeted.exterior;
-
-      // initialize a map for storing & sorting photos per category
-      const photosMap = new Map();
-      photosMap.set("interior", []);
-      photosMap.set("exterior", []);
-      const interior = photosMap.get("interior");
-      const exterior = photosMap.get("exterior");
-
-      // loop, sort & store
-      MOCKED_YACHT_DATA.photos.forEach((curPhoto) => {
-        if (interior.length > 1 && exterior.length > 1) return;
-
-        curPhoto.categories.forEach((category) =>
-          selectedCategories.includes(category)
-            ? interior.push(curPhoto)
-            : exterior.push(curPhoto)
-        );
-      });
-
-      const sortedPhotos = photosMap.get("interior").splice(0, 2);
-
-      categoriesType === "interior"
-        ? setInteriorPhotos(sortedPhotos)
-        : setExteriorPhotos(sortedPhotos);
-    },
-    [categoriesTargeted.interior, categoriesTargeted.exterior]
+  const checkIfInteriorCategory = useCallback(
+    (categoryName) => TARGETED_CATEGORIES.interior.includes(categoryName),
+    []
   );
 
-  const combineYachtGridPhotos = () => {
-    findAndSetPrimaryPhoto();
-    findAndSetPhotosPerTargetedCategories("interior");
-    findAndSetPhotosPerTargetedCategories();
+  const storePhotosPerTargetedCategories = useCallback(() => {
+    // loop
+    MOCKED_YACHT_DATA.photos.forEach((photo) => {
+      // optimize
+      if (mappedInterior.length > 1 && mappedExterior.length > 1) return;
 
-    const gridPhotos = [primaryPhoto, ...interiorPhotos, ...exteriorPhotos];
+      // sort & update photosMap
+      photo.categories.forEach((categoryName) =>
+        checkIfInteriorCategory(categoryName)
+          ? addUniqueArrayItem(mappedInterior, photo)
+          : addUniqueArrayItem(mappedExterior, photo)
+      );
+    });
 
-    setYachtGridPhotos(gridPhotos);
-  };
+    setInteriorPhotos(mappedInterior.splice(0, 2));
+    setExteriorPhotos(mappedExterior.splice(0, 2));
+  }, [
+    mappedInterior,
+    mappedExterior,
+    checkIfInteriorCategory,
+    setInteriorPhotos,
+    setExteriorPhotos,
+  ]);
 
   useEffect(() => {
-    if (
-      primaryPhoto.name &&
-      interiorPhotos.length > 0 &&
-      exteriorPhotos.length > 0
-    ) {
-      combineYachtGridPhotos();
-      console.log("useef", primaryPhoto);
-    }
-  }, [primaryPhoto, interiorPhotos, exteriorPhotos]);
+    findAndSetPrimaryPhoto();
+    storePhotosPerTargetedCategories();
+    setIsTimeToCombine(true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  // const calcRemainingPhotosCount = () =>
-  //   setRemainingPhotosCount(MOCKED_YACHT_DATA.photos.length - 5);
+  // combine the needed gallery data in one array
+  useEffect(() => {
+    isTimeToCombine &&
+      setYachtGridPhotos([primaryPhoto, ...interiorPhotos, ...exteriorPhotos]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isTimeToCombine, primaryPhoto, interiorPhotos, exteriorPhotos]);
 
   return {
-    primaryPhoto,
-    interiorPhotos,
-    exteriorPhotos,
     yachtGridPhotos,
-
-    findAndSetPrimaryPhoto,
-    findAndSetPhotosPerTargetedCategories,
-    combineYachtGridPhotos,
   };
 };
