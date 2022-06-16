@@ -1,0 +1,1059 @@
+{
+  "id": "Y02800376",
+  "name": "Pelorus",
+  "photos": [
+    {
+      "primary": false,
+      "categories": ["anchored", "profile"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/351/extra_large",
+        "large": "https://photos.superyachtapi.com/download/351/large",
+        "medium": "https://photos.superyachtapi.com/download/351/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored", "profile"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/353/extra_large",
+        "large": "https://photos.superyachtapi.com/download/353/large",
+        "medium": "https://photos.superyachtapi.com/download/353/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["at_shipyard"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/4575/extra_large",
+        "large": "https://photos.superyachtapi.com/download/4575/large",
+        "medium": "https://photos.superyachtapi.com/download/4575/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["magazine"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/4576/extra_large",
+        "large": "https://photos.superyachtapi.com/download/4576/large",
+        "medium": "https://photos.superyachtapi.com/download/4576/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["magazine"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/4587/extra_large",
+        "large": "https://photos.superyachtapi.com/download/4587/large",
+        "medium": "https://photos.superyachtapi.com/download/4587/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["magazine"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/4586/extra_large",
+        "large": "https://photos.superyachtapi.com/download/4586/large",
+        "medium": "https://photos.superyachtapi.com/download/4586/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["magazine"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/4596/extra_large",
+        "large": "https://photos.superyachtapi.com/download/4596/large",
+        "medium": "https://photos.superyachtapi.com/download/4596/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["magazine"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/4595/extra_large",
+        "large": "https://photos.superyachtapi.com/download/4595/large",
+        "medium": "https://photos.superyachtapi.com/download/4595/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/32700/extra_large",
+        "large": "https://photos.superyachtapi.com/download/32700/large",
+        "medium": "https://photos.superyachtapi.com/download/32700/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/32699/extra_large",
+        "large": "https://photos.superyachtapi.com/download/32699/large",
+        "medium": "https://photos.superyachtapi.com/download/32699/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["saloon"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/40935/extra_large",
+        "large": "https://photos.superyachtapi.com/download/40935/large",
+        "medium": "https://photos.superyachtapi.com/download/40935/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/32761/extra_large",
+        "large": "https://photos.superyachtapi.com/download/32761/large",
+        "medium": "https://photos.superyachtapi.com/download/32761/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/32760/extra_large",
+        "large": "https://photos.superyachtapi.com/download/32760/large",
+        "medium": "https://photos.superyachtapi.com/download/32760/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["jacuzzi_and_pool"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/10118/extra_large",
+        "large": "https://photos.superyachtapi.com/download/10118/large",
+        "medium": "https://photos.superyachtapi.com/download/10118/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/31080/extra_large",
+        "large": "https://photos.superyachtapi.com/download/31080/large",
+        "medium": "https://photos.superyachtapi.com/download/31080/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/31079/extra_large",
+        "large": "https://photos.superyachtapi.com/download/31079/large",
+        "medium": "https://photos.superyachtapi.com/download/31079/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/31078/extra_large",
+        "large": "https://photos.superyachtapi.com/download/31078/large",
+        "medium": "https://photos.superyachtapi.com/download/31078/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/117599/extra_large",
+        "large": "https://photos.superyachtapi.com/download/117599/large",
+        "medium": "https://photos.superyachtapi.com/download/117599/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/100108/extra_large",
+        "large": "https://photos.superyachtapi.com/download/100108/large",
+        "medium": "https://photos.superyachtapi.com/download/100108/medium"
+      }
+    },
+    {
+      "primary": true,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/100113/extra_large",
+        "large": "https://photos.superyachtapi.com/download/100113/large",
+        "medium": "https://photos.superyachtapi.com/download/100113/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/100114/extra_large",
+        "large": "https://photos.superyachtapi.com/download/100114/large",
+        "medium": "https://photos.superyachtapi.com/download/100114/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/100112/extra_large",
+        "large": "https://photos.superyachtapi.com/download/100112/large",
+        "medium": "https://photos.superyachtapi.com/download/100112/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/100111/extra_large",
+        "large": "https://photos.superyachtapi.com/download/100111/large",
+        "medium": "https://photos.superyachtapi.com/download/100111/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored", "profile"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/352/extra_large",
+        "large": "https://photos.superyachtapi.com/download/352/large",
+        "medium": "https://photos.superyachtapi.com/download/352/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored", "profile"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/350/extra_large",
+        "large": "https://photos.superyachtapi.com/download/350/large",
+        "medium": "https://photos.superyachtapi.com/download/350/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["magazine"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/4593/extra_large",
+        "large": "https://photos.superyachtapi.com/download/4593/large",
+        "medium": "https://photos.superyachtapi.com/download/4593/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["magazine"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/4592/extra_large",
+        "large": "https://photos.superyachtapi.com/download/4592/large",
+        "medium": "https://photos.superyachtapi.com/download/4592/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["magazine"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/4591/extra_large",
+        "large": "https://photos.superyachtapi.com/download/4591/large",
+        "medium": "https://photos.superyachtapi.com/download/4591/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["magazine"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/4590/extra_large",
+        "large": "https://photos.superyachtapi.com/download/4590/large",
+        "medium": "https://photos.superyachtapi.com/download/4590/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["magazine"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/4589/extra_large",
+        "large": "https://photos.superyachtapi.com/download/4589/large",
+        "medium": "https://photos.superyachtapi.com/download/4589/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["aerial", "anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/111411/extra_large",
+        "large": "https://photos.superyachtapi.com/download/111411/large",
+        "medium": "https://photos.superyachtapi.com/download/111411/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored", "profile"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/114193/extra_large",
+        "large": "https://photos.superyachtapi.com/download/114193/large",
+        "medium": "https://photos.superyachtapi.com/download/114193/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/174332/extra_large",
+        "large": "https://photos.superyachtapi.com/download/174332/large",
+        "medium": "https://photos.superyachtapi.com/download/174332/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["magazine"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/4585/extra_large",
+        "large": "https://photos.superyachtapi.com/download/4585/large",
+        "medium": "https://photos.superyachtapi.com/download/4585/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["magazine"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/4583/extra_large",
+        "large": "https://photos.superyachtapi.com/download/4583/large",
+        "medium": "https://photos.superyachtapi.com/download/4583/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["magazine"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/4582/extra_large",
+        "large": "https://photos.superyachtapi.com/download/4582/large",
+        "medium": "https://photos.superyachtapi.com/download/4582/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["dining"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/192865/extra_large",
+        "large": "https://photos.superyachtapi.com/download/192865/large",
+        "medium": "https://photos.superyachtapi.com/download/192865/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["stateroom"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/192866/extra_large",
+        "large": "https://photos.superyachtapi.com/download/192866/large",
+        "medium": "https://photos.superyachtapi.com/download/192866/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["saloon"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/192867/extra_large",
+        "large": "https://photos.superyachtapi.com/download/192867/large",
+        "medium": "https://photos.superyachtapi.com/download/192867/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["stateroom"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/192868/extra_large",
+        "large": "https://photos.superyachtapi.com/download/192868/large",
+        "medium": "https://photos.superyachtapi.com/download/192868/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["bathroom"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/192869/extra_large",
+        "large": "https://photos.superyachtapi.com/download/192869/large",
+        "medium": "https://photos.superyachtapi.com/download/192869/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["stateroom"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/192870/extra_large",
+        "large": "https://photos.superyachtapi.com/download/192870/large",
+        "medium": "https://photos.superyachtapi.com/download/192870/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["stateroom"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/192871/extra_large",
+        "large": "https://photos.superyachtapi.com/download/192871/large",
+        "medium": "https://photos.superyachtapi.com/download/192871/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["fitness_&_wellnes"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/192873/extra_large",
+        "large": "https://photos.superyachtapi.com/download/192873/large",
+        "medium": "https://photos.superyachtapi.com/download/192873/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["magazine"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/4594/extra_large",
+        "large": "https://photos.superyachtapi.com/download/4594/large",
+        "medium": "https://photos.superyachtapi.com/download/4594/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["brochure", "brochure_document"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/4603/extra_large",
+        "large": "https://photos.superyachtapi.com/download/4603/large",
+        "medium": "https://photos.superyachtapi.com/download/4603/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["dining"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/40937/extra_large",
+        "large": "https://photos.superyachtapi.com/download/40937/large",
+        "medium": "https://photos.superyachtapi.com/download/40937/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/32770/extra_large",
+        "large": "https://photos.superyachtapi.com/download/32770/large",
+        "medium": "https://photos.superyachtapi.com/download/32770/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/32769/extra_large",
+        "large": "https://photos.superyachtapi.com/download/32769/large",
+        "medium": "https://photos.superyachtapi.com/download/32769/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["magazine"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/4584/extra_large",
+        "large": "https://photos.superyachtapi.com/download/4584/large",
+        "medium": "https://photos.superyachtapi.com/download/4584/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["magazine"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/4581/extra_large",
+        "large": "https://photos.superyachtapi.com/download/4581/large",
+        "medium": "https://photos.superyachtapi.com/download/4581/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["magazine"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/4580/extra_large",
+        "large": "https://photos.superyachtapi.com/download/4580/large",
+        "medium": "https://photos.superyachtapi.com/download/4580/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["magazine"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/4579/extra_large",
+        "large": "https://photos.superyachtapi.com/download/4579/large",
+        "medium": "https://photos.superyachtapi.com/download/4579/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["magazine"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/4578/extra_large",
+        "large": "https://photos.superyachtapi.com/download/4578/large",
+        "medium": "https://photos.superyachtapi.com/download/4578/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["magazine"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/4601/extra_large",
+        "large": "https://photos.superyachtapi.com/download/4601/large",
+        "medium": "https://photos.superyachtapi.com/download/4601/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["magazine"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/4600/extra_large",
+        "large": "https://photos.superyachtapi.com/download/4600/large",
+        "medium": "https://photos.superyachtapi.com/download/4600/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["magazine"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/4599/extra_large",
+        "large": "https://photos.superyachtapi.com/download/4599/large",
+        "medium": "https://photos.superyachtapi.com/download/4599/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["magazine"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/4598/extra_large",
+        "large": "https://photos.superyachtapi.com/download/4598/large",
+        "medium": "https://photos.superyachtapi.com/download/4598/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["magazine"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/4577/extra_large",
+        "large": "https://photos.superyachtapi.com/download/4577/large",
+        "medium": "https://photos.superyachtapi.com/download/4577/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["magazine"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/4597/extra_large",
+        "large": "https://photos.superyachtapi.com/download/4597/large",
+        "medium": "https://photos.superyachtapi.com/download/4597/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/32698/extra_large",
+        "large": "https://photos.superyachtapi.com/download/32698/large",
+        "medium": "https://photos.superyachtapi.com/download/32698/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/32697/extra_large",
+        "large": "https://photos.superyachtapi.com/download/32697/large",
+        "medium": "https://photos.superyachtapi.com/download/32697/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/32696/extra_large",
+        "large": "https://photos.superyachtapi.com/download/32696/large",
+        "medium": "https://photos.superyachtapi.com/download/32696/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/8229/extra_large",
+        "large": "https://photos.superyachtapi.com/download/8229/large",
+        "medium": "https://photos.superyachtapi.com/download/8229/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["exterior_detail"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/8228/extra_large",
+        "large": "https://photos.superyachtapi.com/download/8228/large",
+        "medium": "https://photos.superyachtapi.com/download/8228/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/8227/extra_large",
+        "large": "https://photos.superyachtapi.com/download/8227/large",
+        "medium": "https://photos.superyachtapi.com/download/8227/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/8226/extra_large",
+        "large": "https://photos.superyachtapi.com/download/8226/large",
+        "medium": "https://photos.superyachtapi.com/download/8226/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/8225/extra_large",
+        "large": "https://photos.superyachtapi.com/download/8225/large",
+        "medium": "https://photos.superyachtapi.com/download/8225/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/8224/extra_large",
+        "large": "https://photos.superyachtapi.com/download/8224/large",
+        "medium": "https://photos.superyachtapi.com/download/8224/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/8223/extra_large",
+        "large": "https://photos.superyachtapi.com/download/8223/large",
+        "medium": "https://photos.superyachtapi.com/download/8223/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/8222/extra_large",
+        "large": "https://photos.superyachtapi.com/download/8222/large",
+        "medium": "https://photos.superyachtapi.com/download/8222/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/8221/extra_large",
+        "large": "https://photos.superyachtapi.com/download/8221/large",
+        "medium": "https://photos.superyachtapi.com/download/8221/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/8220/extra_large",
+        "large": "https://photos.superyachtapi.com/download/8220/large",
+        "medium": "https://photos.superyachtapi.com/download/8220/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/8219/extra_large",
+        "large": "https://photos.superyachtapi.com/download/8219/large",
+        "medium": "https://photos.superyachtapi.com/download/8219/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/8218/extra_large",
+        "large": "https://photos.superyachtapi.com/download/8218/large",
+        "medium": "https://photos.superyachtapi.com/download/8218/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/8217/extra_large",
+        "large": "https://photos.superyachtapi.com/download/8217/large",
+        "medium": "https://photos.superyachtapi.com/download/8217/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/8216/extra_large",
+        "large": "https://photos.superyachtapi.com/download/8216/large",
+        "medium": "https://photos.superyachtapi.com/download/8216/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/8215/extra_large",
+        "large": "https://photos.superyachtapi.com/download/8215/large",
+        "medium": "https://photos.superyachtapi.com/download/8215/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/8214/extra_large",
+        "large": "https://photos.superyachtapi.com/download/8214/large",
+        "medium": "https://photos.superyachtapi.com/download/8214/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/8213/extra_large",
+        "large": "https://photos.superyachtapi.com/download/8213/large",
+        "medium": "https://photos.superyachtapi.com/download/8213/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/8212/extra_large",
+        "large": "https://photos.superyachtapi.com/download/8212/large",
+        "medium": "https://photos.superyachtapi.com/download/8212/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/8211/extra_large",
+        "large": "https://photos.superyachtapi.com/download/8211/large",
+        "medium": "https://photos.superyachtapi.com/download/8211/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/8209/extra_large",
+        "large": "https://photos.superyachtapi.com/download/8209/large",
+        "medium": "https://photos.superyachtapi.com/download/8209/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["exterior_detail"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/8208/extra_large",
+        "large": "https://photos.superyachtapi.com/download/8208/large",
+        "medium": "https://photos.superyachtapi.com/download/8208/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/8207/extra_large",
+        "large": "https://photos.superyachtapi.com/download/8207/large",
+        "medium": "https://photos.superyachtapi.com/download/8207/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/8206/extra_large",
+        "large": "https://photos.superyachtapi.com/download/8206/large",
+        "medium": "https://photos.superyachtapi.com/download/8206/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/32765/extra_large",
+        "large": "https://photos.superyachtapi.com/download/32765/large",
+        "medium": "https://photos.superyachtapi.com/download/32765/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/32764/extra_large",
+        "large": "https://photos.superyachtapi.com/download/32764/large",
+        "medium": "https://photos.superyachtapi.com/download/32764/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["in_marina"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/35040/extra_large",
+        "large": "https://photos.superyachtapi.com/download/35040/large",
+        "medium": "https://photos.superyachtapi.com/download/35040/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["in_marina"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/35039/extra_large",
+        "large": "https://photos.superyachtapi.com/download/35039/large",
+        "medium": "https://photos.superyachtapi.com/download/35039/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["fitness_&_wellnes"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/192872/extra_large",
+        "large": "https://photos.superyachtapi.com/download/192872/large",
+        "medium": "https://photos.superyachtapi.com/download/192872/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["tenders"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/192861/extra_large",
+        "large": "https://photos.superyachtapi.com/download/192861/large",
+        "medium": "https://photos.superyachtapi.com/download/192861/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored", "profile"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/192860/extra_large",
+        "large": "https://photos.superyachtapi.com/download/192860/large",
+        "medium": "https://photos.superyachtapi.com/download/192860/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/192858/extra_large",
+        "large": "https://photos.superyachtapi.com/download/192858/large",
+        "medium": "https://photos.superyachtapi.com/download/192858/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["aerial", "deck"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/192857/extra_large",
+        "large": "https://photos.superyachtapi.com/download/192857/large",
+        "medium": "https://photos.superyachtapi.com/download/192857/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/32763/extra_large",
+        "large": "https://photos.superyachtapi.com/download/32763/large",
+        "medium": "https://photos.superyachtapi.com/download/32763/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/32768/extra_large",
+        "large": "https://photos.superyachtapi.com/download/32768/large",
+        "medium": "https://photos.superyachtapi.com/download/32768/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/32767/extra_large",
+        "large": "https://photos.superyachtapi.com/download/32767/large",
+        "medium": "https://photos.superyachtapi.com/download/32767/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/32766/extra_large",
+        "large": "https://photos.superyachtapi.com/download/32766/large",
+        "medium": "https://photos.superyachtapi.com/download/32766/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/100110/extra_large",
+        "large": "https://photos.superyachtapi.com/download/100110/large",
+        "medium": "https://photos.superyachtapi.com/download/100110/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/100109/extra_large",
+        "large": "https://photos.superyachtapi.com/download/100109/large",
+        "medium": "https://photos.superyachtapi.com/download/100109/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["jacuzzi_and_pool"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/192862/extra_large",
+        "large": "https://photos.superyachtapi.com/download/192862/large",
+        "medium": "https://photos.superyachtapi.com/download/192862/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["deck"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/192863/extra_large",
+        "large": "https://photos.superyachtapi.com/download/192863/large",
+        "medium": "https://photos.superyachtapi.com/download/192863/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["saloon"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/192864/extra_large",
+        "large": "https://photos.superyachtapi.com/download/192864/large",
+        "medium": "https://photos.superyachtapi.com/download/192864/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored", "profile"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/349/extra_large",
+        "large": "https://photos.superyachtapi.com/download/349/large",
+        "medium": "https://photos.superyachtapi.com/download/349/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored", "profile"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/348/extra_large",
+        "large": "https://photos.superyachtapi.com/download/348/large",
+        "medium": "https://photos.superyachtapi.com/download/348/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["at_shipyard"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/4574/extra_large",
+        "large": "https://photos.superyachtapi.com/download/4574/large",
+        "medium": "https://photos.superyachtapi.com/download/4574/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["magazine"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/4588/extra_large",
+        "large": "https://photos.superyachtapi.com/download/4588/large",
+        "medium": "https://photos.superyachtapi.com/download/4588/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["magazine"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/4602/extra_large",
+        "large": "https://photos.superyachtapi.com/download/4602/large",
+        "medium": "https://photos.superyachtapi.com/download/4602/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/32762/extra_large",
+        "large": "https://photos.superyachtapi.com/download/32762/large",
+        "medium": "https://photos.superyachtapi.com/download/32762/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/31077/extra_large",
+        "large": "https://photos.superyachtapi.com/download/31077/large",
+        "medium": "https://photos.superyachtapi.com/download/31077/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/31076/extra_large",
+        "large": "https://photos.superyachtapi.com/download/31076/large",
+        "medium": "https://photos.superyachtapi.com/download/31076/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/31075/extra_large",
+        "large": "https://photos.superyachtapi.com/download/31075/large",
+        "medium": "https://photos.superyachtapi.com/download/31075/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/31074/extra_large",
+        "large": "https://photos.superyachtapi.com/download/31074/large",
+        "medium": "https://photos.superyachtapi.com/download/31074/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["anchored"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/31073/extra_large",
+        "large": "https://photos.superyachtapi.com/download/31073/large",
+        "medium": "https://photos.superyachtapi.com/download/31073/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["in_marina"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/35041/extra_large",
+        "large": "https://photos.superyachtapi.com/download/35041/large",
+        "medium": "https://photos.superyachtapi.com/download/35041/medium"
+      }
+    },
+    {
+      "primary": false,
+      "categories": ["general_arrangement"],
+      "url": {
+        "extraLarge": "https://photos.superyachtapi.com/download/212932/extra_large",
+        "large": "https://photos.superyachtapi.com/download/212932/large",
+        "medium": "https://photos.superyachtapi.com/download/212932/medium"
+      }
+    }
+  ]
+}
