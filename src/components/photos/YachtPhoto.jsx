@@ -2,7 +2,7 @@ import "./YachtPhoto.scss";
 // utils
 import { useYachtPhoto } from "./yachtPhotoUtils";
 
-const YachtPhoto = ({ photo }) => {
+const YachtPhoto = ({ photo, primary }) => {
   const { imgRef, isPortrait } = useYachtPhoto();
 
   return (
@@ -10,7 +10,10 @@ const YachtPhoto = ({ photo }) => {
       ref={imgRef}
       src={photo?.url?.medium}
       alt="hi"
-      className={`${isPortrait ? "portrait" : "landscape"}`}
+      height={primary ? 400 : 150}
+      className={`yacht-photo ${isPortrait ? "portrait" : "landscape"} ${
+        primary ? "primary" : ""
+      }`}
     />
   );
 };

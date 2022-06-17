@@ -3,10 +3,12 @@ import "./App.scss";
 import YachtGallery from "./components/yachts/YachtGallery";
 
 const App = () => (
-  <div className="app page-content">
-    {/* loading... */}
-    {/* Error Message... */}
-    <YachtGallery />
+  <div className="app">
+    <div className="page-content">
+      {/* loading... */}
+      {/* Error Message... */}
+      <YachtGallery />
+    </div>
   </div>
 );
 

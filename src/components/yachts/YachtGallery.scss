@@ -1,22 +1,35 @@
-.yacht-pictures-grid {
+.yacht-all-grid {
+  height: 100%;
+  display: flex;
+  gap: 20px;
+}
+
+.yacht-secondary-grid {
+  border: solid #333;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
-  // width: 100%;
-  // display: grid;
-  // grid-template-columns: 1fr 1fr 1fr 1fr;
-  // grid-template-rows: 1fr 1fr;
-  // gap: 10px 20px;
-  // grid-template-areas:
-  //   "primary primary . ."
-  //   "primary primary . .";
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.yacht-photo {
+  border-radius: 4px;
+
+  &:hover {
+    box-shadow: 3px 3px 12px 3px rgba($color: #000000, $alpha: 0.5);
+    transition: all 0.3s ease-in-out;
+  }
 }
 
 .primary {
-  // width: 100%;
-  // height: 100%;
-  // aspect-ratio: 1/2;
-  // grid-area: primary;
+  height: 100%;
+  max-width: 50%;
+  object-fit: contain;
 }
 
-.yacht-picture {
+.yacht-photo:not(.primary) {
+  object-fit: contain;
+  max-width: 50%;
 }
