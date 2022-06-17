@@ -15,6 +15,8 @@ export const useFetchAndSortYachtGalleryData = () => {
     setExteriorPhotos,
     yachtGridPhotos,
     setYachtGridPhotos,
+    photosCount,
+    setPhotosCount,
     mappedInterior,
     mappedExterior,
   } = useContext(YachtGalleryContext);
@@ -55,13 +57,9 @@ export const useFetchAndSortYachtGalleryData = () => {
 
     setInteriorPhotos(mappedInterior.splice(0, 2));
     setExteriorPhotos(mappedExterior.splice(0, 2));
-  }, [
-    mappedInterior,
-    mappedExterior,
-    checkIfInteriorCategory,
-    setInteriorPhotos,
-    setExteriorPhotos,
-  ]);
+    setPhotosCount(MOCKED_YACHT_DATA.length);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [mappedInterior, mappedExterior]);
 
   useEffect(() => {
     findAndSetPrimaryPhoto();
@@ -75,12 +73,17 @@ export const useFetchAndSortYachtGalleryData = () => {
     const orderedPhotos = [];
     orderedPhotos.push(...interiorPhotos, ...exteriorPhotos);
 
-    isTimeToCombine && setYachtGridPhotos(orderedPhotos);
+    isTimeToCombine &&
+      setYachtGridPhotos(orderedPhotos) &&
+      setPhotosCount(MOCKED_YACHT_DATA.length);
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isTimeToCombine, primaryPhoto, interiorPhotos, exteriorPhotos]);
 
   return {
     primaryPhoto,
     yachtGridPhotos,
+    MOCKED_YACHT_DATA,
+    photosCount,
   };
 };

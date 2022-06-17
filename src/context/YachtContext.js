@@ -8,6 +8,7 @@ export const YachtGalleryContextProvider = ({ children }) => {
   const [interiorPhotos, setInteriorPhotos] = useState([]); // array of two photos [{},{}]
   const [exteriorPhotos, setExteriorPhotos] = useState([]); // array of two photos [{},{}]
   const [yachtGridPhotos, setYachtGridPhotos] = useState([]); // array of 5 photos = [{},....]
+  const [photosCount, setPhotosCount] = useState(0);
 
   // initialized a map for easy sorting & storing photos by its categories
   const photosMap = new Map();
@@ -28,6 +29,9 @@ export const YachtGalleryContextProvider = ({ children }) => {
 
     yachtGridPhotos,
     setYachtGridPhotos,
+
+    photosCount,
+    setPhotosCount,
 
     mappedInterior,
     mappedExterior,

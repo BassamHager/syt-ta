@@ -33,3 +33,9 @@
   object-fit: contain;
   max-width: 50%;
 }
+
+.photos-count {
+  display: grid;
+  place-items: center;
+  color: rgba($color: #000000, $alpha: 0.5);
+}

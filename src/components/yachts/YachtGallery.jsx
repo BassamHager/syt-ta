@@ -6,7 +6,8 @@ import { useFetchAndSortYachtGalleryData } from "./yachtGalleryUtils";
 
 const YachtGallery = () => {
   // utils
-  const { primaryPhoto, yachtGridPhotos } = useFetchAndSortYachtGalleryData();
+  const { primaryPhoto, yachtGridPhotos, photosCount } =
+    useFetchAndSortYachtGalleryData();
 
   return (
     <div className="yacht-all-grid">
@@ -14,7 +15,11 @@ const YachtGallery = () => {
       <div className="yacht-secondary-grid">
         {yachtGridPhotos && yachtGridPhotos.length ? (
           yachtGridPhotos.map((photo, ind) => (
-            <YachtPhoto photo={photo} key={ind} />
+            <YachtPhoto
+              photo={photo}
+              key={ind}
+              last={ind === 3 && photosCount}
+            />
           ))
         ) : (
           <h2>Waiting...</h2>

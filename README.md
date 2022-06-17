@@ -52,6 +52,7 @@ As a visitor of a yacht profile on the SuperYacht Times website, I’d like to b
 - [x] yacht profile
 - [ ] gallery - images grid
 - [ ] onClick => lightbox
+- [ ] Images.length
 
 ### DOD
 
