@@ -70,14 +70,14 @@ export const useFetchAndSortYachtGalleryData = () => {
     findAndSetPrimaryPhoto();
     storePhotosPerTargetedCategories();
     setIsTimeToCombine(true);
-    setPhotosCount(MOCKED_YACHT_DATA.length);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // combine the needed gallery data in one array
   useEffect(() => {
-    const orderedPhotos = [...interiorPhotos, ...exteriorPhotos];
+    const orderedPhotos = [...exteriorPhotos, ...interiorPhotos];
     isTimeToCombine && setYachtGridPhotos(orderedPhotos);
+    setPhotosCount(MOCKED_YACHT_DATA.photos.length);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isTimeToCombine, interiorPhotos, exteriorPhotos]);

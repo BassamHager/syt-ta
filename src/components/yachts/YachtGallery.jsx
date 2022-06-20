@@ -15,13 +15,11 @@ const YachtGallery = () => {
 
       <div className="yacht-secondary-grid">
         {yachtGridPhotos && yachtGridPhotos.length ? (
-          yachtGridPhotos.map((photo, ind) => (
-            <YachtPhoto
-              photo={photo}
-              key={ind}
-              last={ind === 3 && photosCount}
-            />
-          ))
+          yachtGridPhotos.map((photo, ind) => {
+            let count = ind === 3 ? photosCount : null;
+
+            return <YachtPhoto photo={photo} key={ind} last={count} />;
+          })
         ) : (
           <h2>Loading...</h2>
         )}

@@ -12,7 +12,9 @@ const YachtPhoto = ({ photo, primary, last }) => {
       className={`yacht-photo ${isPortrait ? "portrait" : "landscape"} ${
         primary ? "primary" : "secondary"
       }`}
-    ></div>
+    >
+      {last && <div className="photos-count-overlay">{last}</div>}
+    </div>
   );
 };
 
