@@ -5,10 +5,12 @@ import YachtGallery from "./components/yachts/YachtGallery";
 
 const App = () => (
   <div className="app">
-    <div className="page-content">
-      {/* loading... */}
-      {/* Error Message... */}
-      <YachtGallery />
+    <div className="app-overlay">
+      <div className="page-content">
+        {/* loading... */}
+        {/* Error Message... */}
+        <YachtGallery />
+      </div>
     </div>
   </div>
 );

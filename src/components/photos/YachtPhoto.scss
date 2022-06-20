@@ -31,4 +31,10 @@
   display: grid;
   place-items: center;
   color: #fff;
+
+  &:hover {
+    color: gold;
+    font-size: 5rem;
+    transition: all 0.3s ease-in-out;
+  }
 }

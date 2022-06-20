@@ -1,3 +1,7 @@
+// constants
+$APP_BG: url("./assets/images/water-bg.png");
+
+// globals
 * {
   box-sizing: border-box;
 }
@@ -12,11 +16,15 @@ body {
 }
 
 .app {
-  background: #1199;
-  min-height: 100vh;
-  height: auto;
+  background-image: $APP_BG;
+}
+
+.app-overlay {
   display: grid;
   place-items: center;
+  background: rgba($color: #000, $alpha: 0.4);
+  min-height: 100vh;
+  height: auto;
 }
 
 .page-content {
