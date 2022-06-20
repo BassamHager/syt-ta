@@ -1,11 +1,21 @@
 ### Super Yacht Times
 
+Is a simple mono-component web app scaffolded with create-react-app.
+
+- State management solution: Context-API
+- Styled with sass
+
+### Demo
+
+![App-homepage-screenshot](src/assets/images/water-bg.webp)
+
 ### Hot to install deps & run the app
 
 - Clone the repository into your local machine
 - Install the node_modules
 - Run the beautiful app
-  _Run the following CLI commands respectively_
+
+_Run the following CLI commands respectively_
 
 ```
 $ git clone https://github.com/BassamHajar/syt-ta.git
