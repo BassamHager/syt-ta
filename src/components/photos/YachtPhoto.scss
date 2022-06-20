@@ -1,3 +1,30 @@
+.yacht-photo {
+  cursor: pointer;
+  object-fit: cover;
+  border-radius: 0.25rem;
+
+  &:hover {
+    box-shadow: 3px 3px 12px 3px rgba($color: #000, $alpha: 0.5);
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.primary {
+  height: 100%;
+  width: 50%;
+}
+
+.secondary {
+  width: 50%;
+  height: 50%;
+}
+
+// .photos-count {
+//   display: grid;
+//   place-items: center;
+//   color: rgba($color: #000000, $alpha: 0.5);
+// }
+
 .portrait {
   // border: 1px solid orange;
 }

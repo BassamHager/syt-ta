@@ -11,9 +11,9 @@ const YachtPhoto = ({ photo, primary, last }) => {
         ref={imgRef}
         src={photo?.url?.medium}
         alt="hi"
-        height={primary ? 400 : 150}
+        // height={primary ? 400 : 200}
         className={`yacht-photo ${isPortrait ? "portrait" : "landscape"} ${
-          primary ? "primary" : ""
+          primary ? "primary" : "secondary"
         }`}
       ></img>
       {last && <div className="photos-count">{last}</div>}

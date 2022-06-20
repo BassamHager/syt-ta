@@ -1,11 +1,11 @@
 import { useState, useContext, useCallback, useEffect } from "react";
 import { YachtGalleryContext } from "../../context/YachtContext";
-// mocked
+/* mocked */
 import MOCKED_YACHT_DATA from "../../mock/mockedYachtData.json";
 import { TARGETED_CATEGORIES } from "../../mock/constants";
 
 export const useFetchAndSortYachtGalleryData = () => {
-  // context
+  /* context */
   const {
     primaryPhoto,
     interiorPhotos,
@@ -20,10 +20,11 @@ export const useFetchAndSortYachtGalleryData = () => {
     mappedInterior,
     mappedExterior,
   } = useContext(YachtGalleryContext);
-  // inner state
+
+  /* internal state */
   const [isTimeToCombine, setIsTimeToCombine] = useState(false);
 
-  // methods
+  /* methods */
   const findAndSetPrimaryPhoto = useCallback(() => {
     const foundPrimaryPhoto = MOCKED_YACHT_DATA.photos.find(
       (photo) => photo.primary
@@ -32,10 +33,11 @@ export const useFetchAndSortYachtGalleryData = () => {
     setPrimaryPhoto(foundPrimaryPhoto);
   }, [setPrimaryPhoto]);
 
-  // helper - prevent duplications
+  /* helper - prevent duplications */
   const addUniqueArrayItem = (array, item) =>
-    !array.includes(item) && array.push(item);
+    array && item && !array.includes(item) && array.push(item);
 
+  /* check interior => bool */
   const checkIfInteriorCategory = useCallback(
     (categoryName) => TARGETED_CATEGORIES.interior.includes(categoryName),
     []
@@ -55,9 +57,12 @@ export const useFetchAndSortYachtGalleryData = () => {
       );
     });
 
-    setInteriorPhotos(mappedInterior.splice(0, 2));
-    setExteriorPhotos(mappedExterior.splice(0, 2));
-    setPhotosCount(MOCKED_YACHT_DATA.length);
+    // optimize updating interior & exterior photos
+    if (mappedInterior.length > 1)
+      setInteriorPhotos(mappedInterior.splice(0, 2));
+    if (mappedExterior.length > 1)
+      setExteriorPhotos(mappedExterior.splice(0, 2));
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mappedInterior, mappedExterior]);
 
@@ -65,20 +70,17 @@ export const useFetchAndSortYachtGalleryData = () => {
     findAndSetPrimaryPhoto();
     storePhotosPerTargetedCategories();
     setIsTimeToCombine(true);
+    setPhotosCount(MOCKED_YACHT_DATA.length);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // combine the needed gallery data in one array
   useEffect(() => {
-    const orderedPhotos = [];
-    orderedPhotos.push(...interiorPhotos, ...exteriorPhotos);
-
-    isTimeToCombine &&
-      setYachtGridPhotos(orderedPhotos) &&
-      setPhotosCount(MOCKED_YACHT_DATA.length);
+    const orderedPhotos = [...interiorPhotos, ...exteriorPhotos];
+    isTimeToCombine && setYachtGridPhotos(orderedPhotos);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isTimeToCombine, primaryPhoto, interiorPhotos, exteriorPhotos]);
+  }, [isTimeToCombine, interiorPhotos, exteriorPhotos]);
 
   return {
     primaryPhoto,
