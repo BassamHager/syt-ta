@@ -7,7 +7,7 @@ Is a simple mono-component web app scaffolded with create-react-app.
 
 ### Demo
 
-![App-homepage-screenshot](src/assets/images/water-bg.webp)
+![App-homepage-screenshot](src/assets/images/SYT_Demo.jpg)
 
 ### Hot to install deps & run the app
 
