@@ -6,18 +6,13 @@ const YachtPhoto = ({ photo, primary, last }) => {
   const { imgRef, isPortrait } = useYachtPhoto();
 
   return (
-    <>
-      <img
-        ref={imgRef}
-        src={photo?.url?.medium}
-        alt="hi"
-        // height={primary ? 400 : 200}
-        className={`yacht-photo ${isPortrait ? "portrait" : "landscape"} ${
-          primary ? "primary" : "secondary"
-        }`}
-      ></img>
-      {last && <div className="photos-count">{last}</div>}
-    </>
+    <div
+      ref={imgRef}
+      style={{ backgroundImage: `url(${photo?.url?.medium})` }}
+      className={`yacht-photo ${isPortrait ? "portrait" : "landscape"} ${
+        primary ? "primary" : "secondary"
+      }`}
+    ></div>
   );
 };
 

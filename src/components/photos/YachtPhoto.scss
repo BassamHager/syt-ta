@@ -1,8 +1,10 @@
 .yacht-photo {
   cursor: pointer;
-  object-fit: cover;
   border-radius: 0.25rem;
-
+  min-width: 20rem;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
   &:hover {
     box-shadow: 3px 3px 12px 3px rgba($color: #000, $alpha: 0.5);
     transition: all 0.3s ease-in-out;
@@ -12,11 +14,12 @@
 .primary {
   height: 100%;
   width: 50%;
+  min-width: 40rem;
 }
 
 .secondary {
-  width: 50%;
-  height: 50%;
+  width: calc(50% - 1rem);
+  height: calc(50% - 0.5rem);
 }
 
 // .photos-count {

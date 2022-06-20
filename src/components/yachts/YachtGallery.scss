@@ -1,16 +1,12 @@
 .yacht-all-grid {
   height: 100%;
   display: flex;
-  // gap: 2rem;
-  // border: solid maroon;
+  gap: 2rem;
 }
 
 .yacht-secondary-grid {
-  // border: solid #333;
-  // width: 100%;
-  // display: flex;
-  // flex-wrap: wrap;
-  // justify-content: center;
-  // align-items: center;
-  // gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 2rem;
+  width: 50%;
 }

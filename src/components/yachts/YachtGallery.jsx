@@ -12,6 +12,7 @@ const YachtGallery = () => {
   return (
     <div className="yacht-all-grid">
       <YachtPhoto photo={primaryPhoto} primary />
+
       <div className="yacht-secondary-grid">
         {yachtGridPhotos && yachtGridPhotos.length ? (
           yachtGridPhotos.map((photo, ind) => (
