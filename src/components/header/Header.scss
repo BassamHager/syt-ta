@@ -1,0 +1,20 @@
+$mediaMaxWidth: 1260px;
+$mediaBp1Width: 960px;
+$mediaMinWidth: 480px;
+
+.header-overlay {
+  background: rgba($color: #000, $alpha: 0.7);
+  width: 100%;
+  text-align: center;
+  display: grid;
+  place-items: center;
+  height: 20vh;
+  margin: 0 0 10rem;
+
+  @media (max-width: $mediaBp1Width) {
+    margin: 0 0 2rem;
+  }
+}
+.app-header {
+  color: #fff;
+}

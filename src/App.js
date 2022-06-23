@@ -1,10 +1,12 @@
 import "./App.scss";
 // components
+import Footer from "./components/footer/Footer";
+import Header from "./components/header/Header";
 import YachtGallery from "./components/yachts/YachtGallery";
-// lightbox library
 
 const App = () => (
   <div className="app">
+    <Header />
     <div className="app-overlay">
       <div className="page-content">
         {/* loading... */}
@@ -12,6 +14,7 @@ const App = () => (
         <YachtGallery />
       </div>
     </div>
+    <Footer />
   </div>
 );
 

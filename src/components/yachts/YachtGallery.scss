@@ -1,7 +1,16 @@
+$mediaMaxWidth: 1260px;
+$mediaBp1Width: 960px;
+$mediaMinWidth: 480px;
+
 .yacht-all-grid {
   height: 100%;
   display: flex;
   gap: 2rem;
+
+  @media (max-width: $mediaBp1Width) {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 .yacht-secondary-grid {
@@ -9,4 +18,11 @@
   flex-wrap: wrap;
   gap: 1rem 2rem;
   width: 50%;
+
+  @media (max-width: $mediaBp1Width) {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    gap: 1rem;
+  }
 }

@@ -1,3 +1,7 @@
+$mediaMaxWidth: 1260px;
+$mediaBp1Width: 960px;
+$mediaMinWidth: 480px;
+
 // constants
 $APP_BG: url("./assets/images/water-bg.png");
 
@@ -17,19 +21,22 @@ body {
 
 .app {
   background-image: $APP_BG;
+  min-height: 100vh;
 }
 
 .app-overlay {
   display: grid;
   place-items: center;
   background: rgba($color: #000, $alpha: 0.4);
-  min-height: 100vh;
-  height: auto;
 }
 
 .page-content {
   min-width: 1024;
   width: 90vw;
   max-width: 90em;
-  height: 400px;
+  height: 40rem;
+
+  @media (max-width: $mediaBp1Width) {
+    height: auto;
+  }
 }

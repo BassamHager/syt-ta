@@ -1,7 +1,12 @@
+$mediaMaxWidth: 1260px;
+$mediaBp1Width: 960px;
+$mediaMinWidth: 480px;
+
 .yacht-photo {
   cursor: pointer;
   border-radius: 0.25rem;
   min-width: 20rem;
+  min-height: calc(50% - 0.5rem);
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -11,12 +16,28 @@
     box-shadow: 3px 3px 12px 3px rgba($color: #000, $alpha: 0.5);
     transition: all 0.3s ease-in-out;
   }
+
+  // tablet
+  @media (max-width: $mediaBp1Width) {
+    min-height: 20rem;
+  }
+
+  // mobile
+  @media (max-width: $mediaMinWidth) {
+    min-width: 100%;
+  }
 }
 
 .primary {
   height: 100%;
   width: 50%;
   min-width: 40rem;
+  min-height: 40rem;
+
+  // tablet
+  @media (max-width: $mediaBp1Width) {
+    min-width: 100%;
+  }
 }
 
 .secondary {
@@ -30,11 +51,16 @@
   height: 100%;
   display: grid;
   place-items: center;
-  color: #fff;
+  color: #ddd;
 
   &:hover {
-    color: gold;
-    font-size: 5rem;
+    color: #fff;
+    font-size: 4rem;
     transition: all 0.3s ease-in-out;
+  }
+
+  // tablet
+  @media (max-width: $mediaBp1Width) {
+    min-height: 20rem;
   }
 }
