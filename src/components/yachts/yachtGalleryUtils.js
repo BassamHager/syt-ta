@@ -1,5 +1,7 @@
 import { useState, useContext, useCallback, useEffect } from "react";
+/* context */
 import { YachtGalleryContext } from "../../context/YachtContext";
+import { LightboxContext } from "../../context/LightboxContext";
 /* mocked */
 import MOCKED_YACHT_DATA from "../../mock/mockedYachtData.json";
 import { TARGETED_CATEGORIES } from "../../mock/constants";
@@ -20,6 +22,8 @@ export const useFetchAndSortYachtGalleryData = () => {
     mappedInterior,
     mappedExterior,
   } = useContext(YachtGalleryContext);
+
+  const { displayLightbox } = useContext(LightboxContext);
 
   /* internal state */
   const [isTimeToCombine, setIsTimeToCombine] = useState(false);
@@ -87,5 +91,6 @@ export const useFetchAndSortYachtGalleryData = () => {
     yachtGridPhotos,
     MOCKED_YACHT_DATA,
     photosCount,
+    displayLightbox /* context */,
   };
 };
