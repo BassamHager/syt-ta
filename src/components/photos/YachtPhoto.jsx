@@ -3,11 +3,12 @@ import "./YachtPhoto.scss";
 import { useYachtPhoto } from "./yachtPhotoUtils";
 
 const YachtPhoto = ({ photo, primary, last }) => {
-  const { imgRef, isPortrait } = useYachtPhoto();
+  const { imgRef, isPortrait, setDisplayLightbox } = useYachtPhoto();
 
   return (
     <div
       ref={imgRef}
+      onClick={() => setDisplayLightbox(true)}
       style={{ backgroundImage: `url(${photo?.url?.medium})` }}
       className={`yacht-photo ${isPortrait ? "portrait" : "landscape"} ${
         primary ? "primary" : "secondary"

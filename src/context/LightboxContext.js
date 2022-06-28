@@ -6,6 +6,7 @@ export const LightboxContextProvider = ({ children }) => {
   // state
   const [displayLightbox, setDisplayLightbox] = useState(false);
   const [imageToShow, setImageToShow] = useState("");
+  const [curDisplayedIndex, setCurDisplayedIndex] = useState();
 
   const value = {
     displayLightbox,
@@ -13,6 +14,9 @@ export const LightboxContextProvider = ({ children }) => {
 
     imageToShow,
     setImageToShow,
+
+    curDisplayedIndex,
+    setCurDisplayedIndex,
   };
 
   return (

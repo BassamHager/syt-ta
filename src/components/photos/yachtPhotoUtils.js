@@ -1,7 +1,12 @@
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
+// context
+import { LightboxContext } from "../../context/LightboxContext";
+import { YachtPhotoContext } from "../../context/YachtPhotoContext";
 
 export const useYachtPhoto = () => {
   // context
+  const { displayLightbox, setDisplayLightbox } = useContext(LightboxContext);
+  const { allYachtPhotos } = useContext(YachtPhotoContext);
 
   // inner state
   const imgRef = useRef();
@@ -18,5 +23,11 @@ export const useYachtPhoto = () => {
     setIsPortrait(photoWidth < photoHeight);
   }, [photoWidth, photoHeight]);
 
-  return { imgRef, isPortrait };
+  return {
+    imgRef,
+    isPortrait,
+    displayLightbox,
+    setDisplayLightbox,
+    allYachtPhotos,
+  };
 };

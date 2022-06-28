@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import YachtPhoto from "../photos/YachtPhoto";
 import "./YachtGallery.scss";
 // utils
@@ -6,13 +6,25 @@ import { useFetchAndSortYachtGalleryData } from "./yachtGalleryUtils";
 
 const YachtGallery = () => {
   // utils
-  const { primaryPhoto, yachtGridPhotos, photosCount, displayLightbox } =
-    useFetchAndSortYachtGalleryData();
+
+  const {
+    fetchYachtData,
+    primaryPhoto,
+    yachtGridPhotos,
+    photosCount,
+    displayLightbox,
+    setDisplayLightbox,
+  } = useFetchAndSortYachtGalleryData();
+
+  // methods
+  useEffect(() => fetchYachtData()); /* initial yacht data fetch */
 
   return (
     <>
       {displayLightbox ? (
-        <div className="lightbox">hello</div>
+        <div onClick={() => setDisplayLightbox(false)} className="lightbox">
+          hello
+        </div>
       ) : (
         <div className="yacht-all-grid">
           <YachtPhoto photo={primaryPhoto} primary />

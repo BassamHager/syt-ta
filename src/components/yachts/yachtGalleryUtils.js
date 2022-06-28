@@ -1,14 +1,16 @@
 import { useState, useContext, useCallback, useEffect } from "react";
-/* context */
+// context
 import { YachtGalleryContext } from "../../context/YachtContext";
 import { LightboxContext } from "../../context/LightboxContext";
-/* mocked */
+// mocked
 import MOCKED_YACHT_DATA from "../../mock/mockedYachtData.json";
 import { TARGETED_CATEGORIES } from "../../mock/constants";
 
 export const useFetchAndSortYachtGalleryData = () => {
-  /* context */
+  // context
   const {
+    setAllYachtPhotos,
+    allYachtPhotos,
     primaryPhoto,
     interiorPhotos,
     setPrimaryPhoto,
@@ -23,74 +25,104 @@ export const useFetchAndSortYachtGalleryData = () => {
     mappedExterior,
   } = useContext(YachtGalleryContext);
 
-  const { displayLightbox } = useContext(LightboxContext);
+  const { displayLightbox, setDisplayLightbox } = useContext(LightboxContext);
 
-  /* internal state */
+  // internal state
   const [isTimeToCombine, setIsTimeToCombine] = useState(false);
+  const [isSorted, setIsSorted] = useState(false);
 
-  /* methods */
+  // methods
+  const fetchYachtData = useCallback(() => {
+    setAllYachtPhotos(MOCKED_YACHT_DATA.photos);
+    /* eslint-disable-next-line react-hooks/exhaustive-deps */
+  }, []);
+
+  // update allYachtPhotos for logical lightbox behaviour
+  const reorderAllYachtPhotos = (arr, desiredIndex) => {
+    const modifiedCopy = allYachtPhotos;
+    arr?.forEach((el) => {
+      const foundIndex = modifiedCopy.findIndex((photo) => photo === el);
+      if (foundIndex) {
+        modifiedCopy.splice(foundIndex, 1); /* remove element */
+        modifiedCopy.splice(desiredIndex, 0, el); /* insert element */
+        setAllYachtPhotos(modifiedCopy);
+      }
+    });
+  };
+
+  // find the primary photo
   const findAndSetPrimaryPhoto = useCallback(() => {
-    const foundPrimaryPhoto = MOCKED_YACHT_DATA.photos.find(
-      (photo) => photo.primary
-    );
-
+    const foundPrimaryPhoto = allYachtPhotos.find((photo) => photo.primary);
     setPrimaryPhoto(foundPrimaryPhoto);
-  }, [setPrimaryPhoto]);
+    reorderAllYachtPhotos([foundPrimaryPhoto], 0);
+  }, [allYachtPhotos]);
 
-  /* helper - prevent duplications */
+  // prevent duplications in arr.push()
   const addUniqueArrayItem = (array, item) =>
     array && item && !array.includes(item) && array.push(item);
 
-  /* check interior => bool */
+  // check interior => bool
   const checkIfInteriorCategory = useCallback(
     (categoryName) => TARGETED_CATEGORIES.interior.includes(categoryName),
     []
   );
 
+  // find & store interior & exterior photos
   const storePhotosPerTargetedCategories = useCallback(() => {
-    // loop
-    MOCKED_YACHT_DATA.photos.forEach((photo) => {
-      // optimize
+    /* loop */
+    allYachtPhotos.forEach((photo) => {
+      /* optimize */
       if (mappedInterior.length > 1 && mappedExterior.length > 1) return;
 
-      // sort & update photosMap
-      photo.categories.forEach((categoryName) =>
+      /* sort & update photosMap */
+      photo?.categories?.forEach((categoryName) =>
         checkIfInteriorCategory(categoryName)
           ? addUniqueArrayItem(mappedInterior, photo)
           : addUniqueArrayItem(mappedExterior, photo)
       );
     });
 
-    // optimize updating interior & exterior photos
-    if (mappedInterior.length > 1)
-      setInteriorPhotos(mappedInterior.splice(0, 2));
-    if (mappedExterior.length > 1)
-      setExteriorPhotos(mappedExterior.splice(0, 2));
+    /* optimize updating interior & exterior photos */
+    if (mappedInterior.length > 1) {
+      const displayedInterior = mappedInterior.splice(0, 2);
+      setInteriorPhotos(displayedInterior);
+      reorderAllYachtPhotos(displayedInterior, 1);
+    }
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [mappedInterior, mappedExterior]);
+    if (mappedExterior.length > 1) {
+      /* as primary is also an exterior, it's been skipped */
+      const displayedExterior = mappedExterior.splice(1, 2);
+      setExteriorPhotos(displayedExterior);
+      reorderAllYachtPhotos(displayedExterior, 3);
+    }
 
+    /* eslint-disable-next-line react-hooks/exhaustive-deps */
+  }, [mappedInterior, mappedExterior, allYachtPhotos]);
+
+  // sort & update allYachtPhotos
   useEffect(() => {
     findAndSetPrimaryPhoto();
     storePhotosPerTargetedCategories();
     setIsTimeToCombine(true);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+    /* eslint-disable-next-line react-hooks/exhaustive-deps */
+  }, [allYachtPhotos]);
 
   // combine the needed gallery data in one array
   useEffect(() => {
     const orderedPhotos = [...exteriorPhotos, ...interiorPhotos];
     isTimeToCombine && setYachtGridPhotos(orderedPhotos);
     setPhotosCount(MOCKED_YACHT_DATA.photos.length);
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    /* eslint-disable-next-line react-hooks/exhaustive-deps */
   }, [isTimeToCombine, interiorPhotos, exteriorPhotos]);
 
   return {
-    primaryPhoto,
-    yachtGridPhotos,
-    MOCKED_YACHT_DATA,
-    photosCount,
-    displayLightbox /* context */,
+    fetchYachtData,
+    allYachtPhotos /* [{},{},....] */,
+    primaryPhoto /* {} */,
+    yachtGridPhotos /* [{},{},....] */,
+    MOCKED_YACHT_DATA /* {} */,
+    photosCount /* 0 */,
+    displayLightbox /* bool */,
+    setDisplayLightbox /* () => {} */,
   };
 };

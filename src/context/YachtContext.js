@@ -4,13 +4,23 @@ export const YachtGalleryContext = createContext({});
 
 export const YachtGalleryContextProvider = ({ children }) => {
   // state
-  const [primaryPhoto, setPrimaryPhoto] = useState({}); // photo = {}
-  const [interiorPhotos, setInteriorPhotos] = useState([]); // array of two photos [{},{}]
-  const [exteriorPhotos, setExteriorPhotos] = useState([]); // array of two photos [{},{}]
-  const [yachtGridPhotos, setYachtGridPhotos] = useState([]); // array of 5 photos = [{},....]
+  const [allYachtPhotos, setAllYachtPhotos] = useState(
+    []
+  ); /* all ordered photos [{},{},....] */
+
+  const [primaryPhoto, setPrimaryPhoto] = useState({}); /* photo = {} */
+  const [interiorPhotos, setInteriorPhotos] = useState(
+    []
+  ); /* array of two photos [{},{}] */
+  const [exteriorPhotos, setExteriorPhotos] = useState(
+    []
+  ); /* array of two photos [{},{}] */
+  const [yachtGridPhotos, setYachtGridPhotos] = useState(
+    []
+  ); /* array of 5 photos = [{},....] */
   const [photosCount, setPhotosCount] = useState(0);
 
-  // initialized a map for easy sorting & storing photos by its categories
+  /* initialized a map for easy sorting & storing photos by its categories */
   const photosMap = new Map();
   photosMap.set("interior", []);
   photosMap.set("exterior", []);
@@ -18,6 +28,9 @@ export const YachtGalleryContextProvider = ({ children }) => {
   const mappedExterior = photosMap.get("exterior");
 
   const value = {
+    allYachtPhotos,
+    setAllYachtPhotos,
+
     primaryPhoto,
     setPrimaryPhoto,
 
