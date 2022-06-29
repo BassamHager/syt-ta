@@ -5,7 +5,12 @@ import { YachtPhotoContext } from "../../context/YachtPhotoContext";
 
 export const useYachtPhoto = () => {
   // context
-  const { displayLightbox, setDisplayLightbox } = useContext(LightboxContext);
+  const {
+    displayLightbox,
+    setDisplayLightbox,
+    curDisplayedIndex,
+    setCurDisplayedIndex,
+  } = useContext(LightboxContext);
   const { allYachtPhotos } = useContext(YachtPhotoContext);
 
   // inner state
@@ -29,5 +34,7 @@ export const useYachtPhoto = () => {
     displayLightbox,
     setDisplayLightbox,
     allYachtPhotos,
+    curDisplayedIndex,
+    setCurDisplayedIndex,
   };
 };

@@ -11,9 +11,7 @@ export const useFetchAndSortYachtGalleryData = () => {
   const {
     setAllYachtPhotos,
     allYachtPhotos,
-    primaryPhoto,
     interiorPhotos,
-    setPrimaryPhoto,
     exteriorPhotos,
     setInteriorPhotos,
     setExteriorPhotos,
@@ -25,11 +23,11 @@ export const useFetchAndSortYachtGalleryData = () => {
     mappedExterior,
   } = useContext(YachtGalleryContext);
 
-  const { displayLightbox, setDisplayLightbox } = useContext(LightboxContext);
+  const { displayLightbox, setDisplayLightbox, curDisplayedIndex } =
+    useContext(LightboxContext);
 
   // internal state
   const [isTimeToCombine, setIsTimeToCombine] = useState(false);
-  const [isSorted, setIsSorted] = useState(false);
 
   // methods
   const fetchYachtData = useCallback(() => {
@@ -53,7 +51,6 @@ export const useFetchAndSortYachtGalleryData = () => {
   // find the primary photo
   const findAndSetPrimaryPhoto = useCallback(() => {
     const foundPrimaryPhoto = allYachtPhotos.find((photo) => photo.primary);
-    setPrimaryPhoto(foundPrimaryPhoto);
     reorderAllYachtPhotos([foundPrimaryPhoto], 0);
   }, [allYachtPhotos]);
 
@@ -86,14 +83,14 @@ export const useFetchAndSortYachtGalleryData = () => {
     if (mappedInterior.length > 1) {
       const displayedInterior = mappedInterior.splice(0, 2);
       setInteriorPhotos(displayedInterior);
-      reorderAllYachtPhotos(displayedInterior, 1);
+      reorderAllYachtPhotos(displayedInterior, 3);
     }
 
     if (mappedExterior.length > 1) {
       /* as primary is also an exterior, it's been skipped */
       const displayedExterior = mappedExterior.splice(1, 2);
       setExteriorPhotos(displayedExterior);
-      reorderAllYachtPhotos(displayedExterior, 3);
+      reorderAllYachtPhotos(displayedExterior, 1);
     }
 
     /* eslint-disable-next-line react-hooks/exhaustive-deps */
@@ -109,20 +106,21 @@ export const useFetchAndSortYachtGalleryData = () => {
 
   // combine the needed gallery data in one array
   useEffect(() => {
-    const orderedPhotos = [...exteriorPhotos, ...interiorPhotos];
+    const copiedPhotos = [...allYachtPhotos];
+    const orderedPhotos = copiedPhotos.splice(0, 5);
     isTimeToCombine && setYachtGridPhotos(orderedPhotos);
-    setPhotosCount(MOCKED_YACHT_DATA.photos.length);
+    setPhotosCount(allYachtPhotos.length);
     /* eslint-disable-next-line react-hooks/exhaustive-deps */
   }, [isTimeToCombine, interiorPhotos, exteriorPhotos]);
 
   return {
     fetchYachtData,
     allYachtPhotos /* [{},{},....] */,
-    primaryPhoto /* {} */,
     yachtGridPhotos /* [{},{},....] */,
     MOCKED_YACHT_DATA /* {} */,
     photosCount /* 0 */,
     displayLightbox /* bool */,
     setDisplayLightbox /* () => {} */,
+    curDisplayedIndex,
   };
 };

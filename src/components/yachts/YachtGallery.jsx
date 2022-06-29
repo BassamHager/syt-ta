@@ -9,11 +9,12 @@ const YachtGallery = () => {
 
   const {
     fetchYachtData,
-    primaryPhoto,
+    allYachtPhotos,
     yachtGridPhotos,
     photosCount,
     displayLightbox,
     setDisplayLightbox,
+    curDisplayedIndex,
   } = useFetchAndSortYachtGalleryData();
 
   // methods
@@ -23,18 +24,22 @@ const YachtGallery = () => {
     <>
       {displayLightbox ? (
         <div onClick={() => setDisplayLightbox(false)} className="lightbox">
-          hello
+          <YachtPhoto photo={allYachtPhotos[curDisplayedIndex]} />
         </div>
       ) : (
         <div className="yacht-all-grid">
-          <YachtPhoto photo={primaryPhoto} primary />
+          <YachtPhoto photo={allYachtPhotos[0]} primary ind={0} />
 
           <div className="yacht-secondary-grid">
             {yachtGridPhotos && yachtGridPhotos.length ? (
               yachtGridPhotos.map((photo, ind) => {
-                let count = ind === 3 ? photosCount : null;
+                if (ind === 0) return null;
 
-                return <YachtPhoto photo={photo} key={ind} last={count} />;
+                let count = ind === 4 ? photosCount : null;
+
+                return (
+                  <YachtPhoto photo={photo} key={ind} last={count} ind={ind} />
+                );
               })
             ) : (
               <h2>Loading...</h2>

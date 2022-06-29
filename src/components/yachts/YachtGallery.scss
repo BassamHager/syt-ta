@@ -28,8 +28,15 @@ $mediaMinWidth: 480px;
 }
 
 .lightbox {
+  position: absolute;
+  top: 20vh;
+  left: 0;
+  // left: calc(50% - 20rem);
+  display: grid;
+  place-items: center;
   background: rgba($color: #fff, $alpha: 0.5);
-  height: 100%;
+  height: auto;
   width: 100%;
   min-height: 40rem;
+  min-width: 40rem;
 }
