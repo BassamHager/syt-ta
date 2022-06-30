@@ -3,6 +3,7 @@ import "./YachtPhoto.scss";
 import { useYachtPhoto } from "./yachtPhotoUtils";
 
 const YachtPhoto = ({ photo, primary, last, ind }) => {
+  // utils
   const { clickYacht } = useYachtPhoto();
 
   return (
@@ -12,7 +13,6 @@ const YachtPhoto = ({ photo, primary, last, ind }) => {
       className={`yacht-photo  ${primary ? "primary" : "secondary"}`}
     >
       {last && <div className="photos-count-overlay">{last}</div>}
-      {/* {console.log(ind)} */}
     </div>
   );
 };

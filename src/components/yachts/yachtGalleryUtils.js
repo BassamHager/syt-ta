@@ -1,10 +1,12 @@
-import { useState, useContext, useCallback, useEffect } from "react";
+import { useContext, useCallback, useEffect } from "react";
 // context
 import { YachtGalleryContext } from "../../context/YachtContext";
 import { LightboxContext } from "../../context/LightboxContext";
 // mocked
 import MOCKED_YACHT_DATA from "../../mock/mockedYachtData.json";
 import { TARGETED_CATEGORIES } from "../../mock/constants";
+// utils
+import { useYachtPhoto } from "../photos/yachtPhotoUtils";
 
 export const useFetchAndSortYachtGalleryData = () => {
   // context
@@ -23,6 +25,9 @@ export const useFetchAndSortYachtGalleryData = () => {
 
   const { isShowLightbox, setIsShowLightbox, setCurDisplayedIndex } =
     useContext(LightboxContext); // dlt unused
+
+  // utils
+  const { curDisplayedIndex } = useYachtPhoto();
 
   // internal state
 
@@ -107,7 +112,7 @@ export const useFetchAndSortYachtGalleryData = () => {
     findAndSetPrimaryPhoto();
     sortPhotosPerCategory();
     updateAllPhotosOrder();
-  }, [findAndSetPrimaryPhoto, sortPhotosPerCategory]);
+  }, [allYachtPhotos]);
 
   // fill in order the yacht photos displayed grid
   useEffect(() => {
@@ -120,18 +125,22 @@ export const useFetchAndSortYachtGalleryData = () => {
 
   useEffect(() => {
     setPhotosCount(allYachtPhotos.length);
-    // console.log(allYachtPhotos);
   }, [allYachtPhotos]);
 
+  // fetch & store all photos onMount
+  useEffect(() => fetchYachtData(), []);
+
   return {
-    fetchYachtData,
-    allYachtPhotos /* [{},{},....] */,
-    yachtGridPhotos /* [{},{},....] */,
-    MOCKED_YACHT_DATA /* {} */,
-    photosCount /* 0 */,
+    // LightboxContext
     isShowLightbox,
     setIsShowLightbox,
     setCurDisplayedIndex,
+    // YachtContext
+    allYachtPhotos,
     setAllYachtPhotos,
+    yachtGridPhotos,
+    photosCount,
+    // utils
+    curDisplayedIndex,
   };
 };

@@ -1,6 +1,4 @@
-import React, { useEffect } from "react";
 import YachtPhoto from "../photos/YachtPhoto";
-import { useYachtPhoto } from "../photos/yachtPhotoUtils";
 import "./YachtGallery.scss";
 // utils
 import { useFetchAndSortYachtGalleryData } from "./yachtGalleryUtils";
@@ -9,35 +7,23 @@ const YachtGallery = () => {
   // utils
 
   const {
-    fetchYachtData,
+    // LightboxContext
+    isShowLightbox,
+    setIsShowLightbox,
+    // YachtContext
     allYachtPhotos,
     yachtGridPhotos,
     photosCount,
-    setIsShowLightbox,
-    setCurDisplayedIndex,
-
-    isShowLightbox,
-    setAllYachtPhotos,
+    // other utils
+    curDisplayedIndex,
   } = useFetchAndSortYachtGalleryData();
-
-  const { curDisplayedIndex } = useYachtPhoto();
-
-  // methods
-  // initial yacht data fetch onMount
-  useEffect(() => {
-    fetchYachtData();
-  }, []);
 
   return (
     <>
       {isShowLightbox ? (
         // lightbox
         <div onClick={() => setIsShowLightbox(false)} className="lightbox">
-          {console.log("ind in light::", curDisplayedIndex)}
-          <YachtPhoto
-            photo={allYachtPhotos[curDisplayedIndex]}
-            ind={curDisplayedIndex}
-          />
+          <YachtPhoto photo={allYachtPhotos[curDisplayedIndex]} />
         </div>
       ) : (
         // onMount
@@ -66,7 +52,6 @@ const YachtGallery = () => {
           </div>
         </div>
       )}
-      {}
     </>
   );
 };
