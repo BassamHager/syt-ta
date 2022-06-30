@@ -3,22 +3,16 @@ import "./YachtPhoto.scss";
 import { useYachtPhoto } from "./yachtPhotoUtils";
 
 const YachtPhoto = ({ photo, primary, last, ind }) => {
-  const { imgRef, isPortrait, setDisplayLightbox, setCurDisplayedIndex } =
-    useYachtPhoto();
+  const { clickYacht } = useYachtPhoto();
 
   return (
     <div
-      ref={imgRef}
-      onClick={() => {
-        setCurDisplayedIndex(ind);
-        setDisplayLightbox(true);
-      }}
+      onClick={() => clickYacht(ind)}
       style={{ backgroundImage: `url(${photo?.url?.medium})` }}
-      className={`yacht-photo ${isPortrait ? "portrait" : "landscape"} ${
-        primary ? "primary" : "secondary"
-      }`}
+      className={`yacht-photo  ${primary ? "primary" : "secondary"}`}
     >
       {last && <div className="photos-count-overlay">{last}</div>}
+      {/* {console.log(ind)} */}
     </div>
   );
 };

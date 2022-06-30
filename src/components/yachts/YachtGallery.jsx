@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import YachtPhoto from "../photos/YachtPhoto";
+import { useYachtPhoto } from "../photos/yachtPhotoUtils";
 import "./YachtGallery.scss";
 // utils
 import { useFetchAndSortYachtGalleryData } from "./yachtGalleryUtils";
@@ -12,11 +13,14 @@ const YachtGallery = () => {
     allYachtPhotos,
     yachtGridPhotos,
     photosCount,
-    displayLightbox,
-    setDisplayLightbox,
-    curDisplayedIndex,
+    setIsShowLightbox,
+    setCurDisplayedIndex,
+
+    isShowLightbox,
     setAllYachtPhotos,
   } = useFetchAndSortYachtGalleryData();
+
+  const { curDisplayedIndex } = useYachtPhoto();
 
   // methods
   // initial yacht data fetch onMount
@@ -26,22 +30,34 @@ const YachtGallery = () => {
 
   return (
     <>
-      {displayLightbox ? (
-        <div onClick={() => setDisplayLightbox(false)} className="lightbox">
-          <YachtPhoto photo={allYachtPhotos[curDisplayedIndex]} />
+      {isShowLightbox ? (
+        // lightbox
+        <div onClick={() => setIsShowLightbox(false)} className="lightbox">
+          {console.log("ind in light::", curDisplayedIndex)}
+          <YachtPhoto
+            photo={allYachtPhotos[curDisplayedIndex]}
+            ind={curDisplayedIndex}
+          />
         </div>
       ) : (
+        // onMount
         <div className="yacht-all-grid">
           <YachtPhoto photo={yachtGridPhotos[0]} primary ind={0} />
 
           <div className="yacht-secondary-grid">
             {yachtGridPhotos && yachtGridPhotos.length ? (
-              yachtGridPhotos.map((photo, ind) => {
-                if (ind === 0) return null;
+              yachtGridPhotos.map((photo, index) => {
+                if (index === 0) return null;
 
-                let count = ind === 4 ? photosCount : null;
+                let count = index === 4 ? photosCount : null;
+
                 return (
-                  <YachtPhoto photo={photo} key={ind} last={count} ind={ind} />
+                  <YachtPhoto
+                    photo={photo}
+                    key={index}
+                    last={count}
+                    ind={index}
+                  />
                 );
               })
             ) : (

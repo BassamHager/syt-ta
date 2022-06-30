@@ -4,16 +4,12 @@ export const LightboxContext = createContext();
 
 export const LightboxContextProvider = ({ children }) => {
   // state
-  const [displayLightbox, setDisplayLightbox] = useState(false);
-  const [imageToShow, setImageToShow] = useState("");
-  const [curDisplayedIndex, setCurDisplayedIndex] = useState();
+  const [isShowLightbox, setIsShowLightbox] = useState(false); /* bool */
+  const [curDisplayedIndex, setCurDisplayedIndex] = useState(); /* number */
 
   const value = {
-    displayLightbox,
-    setDisplayLightbox,
-
-    imageToShow,
-    setImageToShow,
+    isShowLightbox,
+    setIsShowLightbox,
 
     curDisplayedIndex,
     setCurDisplayedIndex,

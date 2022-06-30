@@ -21,16 +21,15 @@ export const useFetchAndSortYachtGalleryData = () => {
     setPhotosCount,
   } = useContext(YachtGalleryContext);
 
-  const { displayLightbox, setDisplayLightbox, curDisplayedIndex } =
-    useContext(LightboxContext);
+  const { isShowLightbox, setIsShowLightbox, setCurDisplayedIndex } =
+    useContext(LightboxContext); // dlt unused
 
   // internal state
 
   // methods
   const fetchYachtData = useCallback(() => {
     setAllYachtPhotos(MOCKED_YACHT_DATA.photos);
-    /* eslint-disable-next-line react-hooks/exhaustive-deps */
-  }, [MOCKED_YACHT_DATA.photos]);
+  }, []);
 
   // update allYachtPhotos for logical lightbox behaviour
   const reorderYachtPhotos = useCallback(
@@ -89,23 +88,39 @@ export const useFetchAndSortYachtGalleryData = () => {
     });
   }, [allYachtPhotos]);
 
+  // update photos order after displaying the grid
+  const updateAllPhotosOrder = useCallback(() => {
+    const gridPhotos = [...yachtGridPhotos];
+    const allPhotos = [...allYachtPhotos];
+    gridPhotos?.forEach((pho) => {
+      /* find pho in all */
+      const foundPhotoInd = allPhotos.findIndex((curPho) => curPho === pho);
+      /* remove pho from all */
+      allPhotos.splice(foundPhotoInd, 1);
+    });
+    /* insert gridPhotos in 0 index of allPhotos */
+    allPhotos.splice(0, 0, gridPhotos);
+  }, [yachtGridPhotos, allYachtPhotos]);
+
   // find & sort photos according to their categories
   useEffect(() => {
     findAndSetPrimaryPhoto();
     sortPhotosPerCategory();
+    updateAllPhotosOrder();
   }, [findAndSetPrimaryPhoto, sortPhotosPerCategory]);
 
   // fill in order the yacht photos displayed grid
   useEffect(() => {
     const primary = allYachtPhotos[0];
-    const exterior = exteriorPhotos.splice(0, 2);
-    const interior = interiorPhotos.splice(0, 2);
+    const exterior = [...exteriorPhotos].splice(0, 2);
+    const interior = [...interiorPhotos].splice(0, 2);
     const orderedPhotos = [primary, ...exterior, ...interior];
     setYachtGridPhotos(orderedPhotos);
   }, [allYachtPhotos, exteriorPhotos, interiorPhotos]);
 
   useEffect(() => {
     setPhotosCount(allYachtPhotos.length);
+    // console.log(allYachtPhotos);
   }, [allYachtPhotos]);
 
   return {
@@ -114,9 +129,9 @@ export const useFetchAndSortYachtGalleryData = () => {
     yachtGridPhotos /* [{},{},....] */,
     MOCKED_YACHT_DATA /* {} */,
     photosCount /* 0 */,
-    displayLightbox /* bool */,
-    setDisplayLightbox /* () => {} */,
-    curDisplayedIndex,
+    isShowLightbox,
+    setIsShowLightbox,
+    setCurDisplayedIndex,
     setAllYachtPhotos,
   };
 };
