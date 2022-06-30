@@ -9,54 +9,67 @@ import { TARGETED_CATEGORIES } from "../../mock/constants";
 export const useFetchAndSortYachtGalleryData = () => {
   // context
   const {
-    setAllYachtPhotos,
     allYachtPhotos,
-    interiorPhotos,
-    exteriorPhotos,
-    setInteriorPhotos,
-    setExteriorPhotos,
+    setAllYachtPhotos,
     yachtGridPhotos,
     setYachtGridPhotos,
+    interiorPhotos,
+    setInteriorPhotos,
+    exteriorPhotos,
+    setExteriorPhotos,
     photosCount,
     setPhotosCount,
-    mappedInterior,
-    mappedExterior,
   } = useContext(YachtGalleryContext);
 
   const { displayLightbox, setDisplayLightbox, curDisplayedIndex } =
     useContext(LightboxContext);
 
   // internal state
-  const [isTimeToCombine, setIsTimeToCombine] = useState(false);
 
   // methods
   const fetchYachtData = useCallback(() => {
     setAllYachtPhotos(MOCKED_YACHT_DATA.photos);
     /* eslint-disable-next-line react-hooks/exhaustive-deps */
-  }, []);
+  }, [MOCKED_YACHT_DATA.photos]);
 
   // update allYachtPhotos for logical lightbox behaviour
-  const reorderAllYachtPhotos = (arr, desiredIndex) => {
-    const modifiedCopy = allYachtPhotos;
-    arr?.forEach((el) => {
-      const foundIndex = modifiedCopy.findIndex((photo) => photo === el);
-      if (foundIndex) {
-        modifiedCopy.splice(foundIndex, 1); /* remove element */
-        modifiedCopy.splice(desiredIndex, 0, el); /* insert element */
-        setAllYachtPhotos(modifiedCopy);
-      }
-    });
-  };
+  const reorderYachtPhotos = useCallback(
+    (arr, desiredIndex) => {
+      const modifiedCopy = [...allYachtPhotos];
+      arr?.forEach((el) => {
+        const foundIndex = modifiedCopy.findIndex((photo) => photo === el);
+        if (foundIndex) {
+          modifiedCopy.splice(foundIndex, 1); /* remove element */
+          modifiedCopy.splice(desiredIndex, 0, el); /* insert element */
+          setAllYachtPhotos(modifiedCopy);
+        }
+      });
+    },
+    [allYachtPhotos]
+  );
 
   // find the primary photo
   const findAndSetPrimaryPhoto = useCallback(() => {
-    const foundPrimaryPhoto = allYachtPhotos.find((photo) => photo.primary);
-    reorderAllYachtPhotos([foundPrimaryPhoto], 0);
+    // console.log("bf1", allYachtPhotos);
+    const foundPrimaryPhoto = allYachtPhotos.find((photo) => photo?.primary);
+    reorderYachtPhotos([foundPrimaryPhoto], 0);
   }, [allYachtPhotos]);
 
   // prevent duplications in arr.push()
-  const addUniqueArrayItem = (array, item) =>
-    array && item && !array.includes(item) && array.push(item);
+  const addUniquePhoto = useCallback(
+    (category, photoArg) => {
+      if (category === "int") {
+        if (!interiorPhotos.includes(photoArg)) {
+          setInteriorPhotos([photoArg, ...interiorPhotos]);
+        }
+      } else {
+        if (!exteriorPhotos.includes(photoArg)) {
+          setExteriorPhotos([photoArg, ...exteriorPhotos]);
+        }
+      }
+    },
+    [exteriorPhotos, interiorPhotos]
+  );
 
   // check interior => bool
   const checkIfInteriorCategory = useCallback(
@@ -64,54 +77,36 @@ export const useFetchAndSortYachtGalleryData = () => {
     []
   );
 
-  // find & store interior & exterior photos
-  const storePhotosPerTargetedCategories = useCallback(() => {
-    /* loop */
+  // sort photos per category
+  const sortPhotosPerCategory = useCallback(() => {
     allYachtPhotos.forEach((photo) => {
-      /* optimize */
-      if (mappedInterior.length > 1 && mappedExterior.length > 1) return;
-
-      /* sort & update photosMap */
       photo?.categories?.forEach((categoryName) =>
         checkIfInteriorCategory(categoryName)
-          ? addUniqueArrayItem(mappedInterior, photo)
-          : addUniqueArrayItem(mappedExterior, photo)
+          ? addUniquePhoto("int", photo)
+          : categoryName !== "general_arrangement" &&
+            addUniquePhoto("ext", photo)
       );
     });
-
-    /* optimize updating interior & exterior photos */
-    if (mappedInterior.length > 1) {
-      const displayedInterior = mappedInterior.splice(0, 2);
-      setInteriorPhotos(displayedInterior);
-      reorderAllYachtPhotos(displayedInterior, 3);
-    }
-
-    if (mappedExterior.length > 1) {
-      /* as primary is also an exterior, it's been skipped */
-      const displayedExterior = mappedExterior.splice(1, 2);
-      setExteriorPhotos(displayedExterior);
-      reorderAllYachtPhotos(displayedExterior, 1);
-    }
-
-    /* eslint-disable-next-line react-hooks/exhaustive-deps */
-  }, [mappedInterior, mappedExterior, allYachtPhotos]);
-
-  // sort & update allYachtPhotos
-  useEffect(() => {
-    findAndSetPrimaryPhoto();
-    storePhotosPerTargetedCategories();
-    setIsTimeToCombine(true);
-    /* eslint-disable-next-line react-hooks/exhaustive-deps */
   }, [allYachtPhotos]);
 
-  // combine the needed gallery data in one array
+  // find & sort photos according to their categories
   useEffect(() => {
-    const copiedPhotos = [...allYachtPhotos];
-    const orderedPhotos = copiedPhotos.splice(0, 5);
-    isTimeToCombine && setYachtGridPhotos(orderedPhotos);
+    findAndSetPrimaryPhoto();
+    sortPhotosPerCategory();
+  }, [findAndSetPrimaryPhoto, sortPhotosPerCategory]);
+
+  // fill in order the yacht photos displayed grid
+  useEffect(() => {
+    const primary = allYachtPhotos[0];
+    const exterior = exteriorPhotos.splice(0, 2);
+    const interior = interiorPhotos.splice(0, 2);
+    const orderedPhotos = [primary, ...exterior, ...interior];
+    setYachtGridPhotos(orderedPhotos);
+  }, [allYachtPhotos, exteriorPhotos, interiorPhotos]);
+
+  useEffect(() => {
     setPhotosCount(allYachtPhotos.length);
-    /* eslint-disable-next-line react-hooks/exhaustive-deps */
-  }, [isTimeToCombine, interiorPhotos, exteriorPhotos]);
+  }, [allYachtPhotos]);
 
   return {
     fetchYachtData,
@@ -122,5 +117,6 @@ export const useFetchAndSortYachtGalleryData = () => {
     displayLightbox /* bool */,
     setDisplayLightbox /* () => {} */,
     curDisplayedIndex,
+    setAllYachtPhotos,
   };
 };

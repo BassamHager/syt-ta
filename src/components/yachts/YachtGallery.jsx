@@ -15,10 +15,14 @@ const YachtGallery = () => {
     displayLightbox,
     setDisplayLightbox,
     curDisplayedIndex,
+    setAllYachtPhotos,
   } = useFetchAndSortYachtGalleryData();
 
   // methods
-  useEffect(() => fetchYachtData()); /* initial yacht data fetch */
+  // initial yacht data fetch onMount
+  useEffect(() => {
+    fetchYachtData();
+  }, []);
 
   return (
     <>
@@ -28,7 +32,7 @@ const YachtGallery = () => {
         </div>
       ) : (
         <div className="yacht-all-grid">
-          <YachtPhoto photo={allYachtPhotos[0]} primary ind={0} />
+          <YachtPhoto photo={yachtGridPhotos[0]} primary ind={0} />
 
           <div className="yacht-secondary-grid">
             {yachtGridPhotos && yachtGridPhotos.length ? (
@@ -36,7 +40,6 @@ const YachtGallery = () => {
                 if (ind === 0) return null;
 
                 let count = ind === 4 ? photosCount : null;
-
                 return (
                   <YachtPhoto photo={photo} key={ind} last={count} ind={ind} />
                 );
@@ -47,6 +50,7 @@ const YachtGallery = () => {
           </div>
         </div>
       )}
+      {}
     </>
   );
 };
